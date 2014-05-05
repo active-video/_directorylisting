@@ -1,0 +1,14 @@
+# SET INDEX OPTIONS
+IndexOptions FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=* HTMLTable XHTML
+
+# SET DISPLAY ORDER
+IndexOrderDefault Ascending Name
+
+# SPECIFY HEADER FILE
+HeaderName /_directorylisting/header.html
+ 
+# SPECIFY FOOTER FILE
+ReadmeName /_directorylisting/footer.html
+
+# IGNORE THESE FILES
+IndexIgnore _directorylisting
