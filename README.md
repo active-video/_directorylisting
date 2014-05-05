@@ -22,6 +22,7 @@ This software package is intended to be placed in the root of your web folder, n
 	IndexIgnore _directorylisting
 	```
 4.  Locate `httpd.conf`, normally in `/etc/httpd/conf/httpd.conf` and ensure that the "AllowOverride" has a value of "All", and that "Options" has a value of "Indexes FollowSymLinks" as below:
+	
   ```
   <Directory "/var/www/html">
     #the following 2 lines must be present and contain these options and have "AllowOverride All"
@@ -31,9 +32,22 @@ This software package is intended to be placed in the root of your web folder, n
     Order allow,deny
     Allow from all
   </Directory>
-  
-
+  ```
 5.  Restart apache
   `sudo /etc/init.d/httpd restart`
 
 Visit your apache site in the browser and you will see a directory listing that is quite pretty and useable with a keyboard Up/Down/Left/Right/Ok
+
+
+## Adding/modifying link list and names via `config.json`
+You have the ability to add a `config.json` file to any folder. This will allow you to append/prepend additional links in the list or to change the display name of folders if you like.
+
+Sample (if an override contains an array, it will use it to override the name AND override the link):
+
+	{
+		"title" : "Apps Folder",
+		"overrides" : {
+			"_applauncher/" : ["App Launcher", "_applauncher/html/"],
+			"_users/" 		: "User Folders"
+		}
+	}
